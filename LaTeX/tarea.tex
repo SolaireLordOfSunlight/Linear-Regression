@@ -1,0 +1,58 @@
+\documentclass{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
+
+\title{Analisis de Regresion con respecto a PPG frente a MPG en partidos de playoff de la NBA}
+\author{Rudy Miranda}
+\date{Abril, 2023}
+
+\begin{document}
+    \maketitle
+
+    \section{Introducci\'on}
+    Se busca confirmar si la relacion entre la cantidad de puntos anotados por un jugador de la NBA, frente a la cantidad de minutos jugados por partido tienen una relacion del tipo lineal.
+
+    Los datos corresponden a los playoff (post-temporada) de la temporada 2021-22 de la NBA obtenidos de su sitio web oficial.
+
+    Un punto a enfatizar es que las 79 unidades de  observacion son jugadores de la misma posicion, donde se toma en cuenta su promedio de puntos por partidos (PPG) y su promedio de minutos por partido (MPG).
+    
+    \section{Modelo Poblacional}
+    
+    \begin{equation}
+        PPG = \beta_0 + \beta_1 MPG + \varepsilon        
+    \end{equation}
+    
+    \section{Estimacion de Parametros}
+    \section{Modelo Estimado}
+    
+    \begin{equation}
+        PPG = \hat{\beta_0} + \hat{\beta_1} MPG + \varepsilon        
+    \end{equation}
+    
+    \section{Analisis de Residuos}
+    Una hipotesis que deben cumplir nuestro modelo es que $\varepsilon_i = (Y_i - \bar{Y}) \sim N(0, \sigma^2)$
+
+    Aplicando distintos test de normalidad, tanto parametricos como no parametricos
+    
+    \begin{table}[h]
+        \begin{center}
+            \begin{tabular}{|c|c|}
+                \hline Test & Valor P \\ \hline
+                Jarque-Bera & 0.04469 \\ \hline
+                Kolmogorov-Smirnov & 3.847e-05\\ \hline
+                Shapiro-Wilk & 0.1174 \\ \hline
+                Anderson-Darling & 0.1493 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    Con un nivel de significancia de 0.05, podriamos considerar la distribucion como una normal.
+
+    Ahora, al considerar un intervalo de confianza sobre la media con la hipotesis nula $H_0: \mu = 0$ obtenemos un valor $p = 1$, con lo que aceptamos $H_0$.
+
+    Con ello se cumplen los dos supuestos de la distribucion de los residuos.
+
+    \section{Conclusion}
+    Es clara la relacion entre los minutos jugados y los puntos anotados, pero seria una buena desicion incluir mas variables a este modelo en vez de solo dejarlo en dos.
+\end{document}
