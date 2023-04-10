@@ -1,10 +1,14 @@
-\documentclass{IEEEtran}
+\documentclass[onecolumn]{IEEEtran}
 
 \usepackage{amsmath}
 \usepackage[spanish]{babel}
+\usepackage[colorlinks=true, urlcolor=blue]{hyperref}
+\usepackage{graphicx}
 
-\title{Analisis de Regresion con respecto a PPG frente a MPG en partidos de playoff de la NBA}
-\author{Rudy Miranda}
+\title{Analisis de regresion sobre la relacion de las estadisticas de MPG y PPG en partidos de postemporada de la NBA}
+\author{Rudy Miranda Bastias\\
+    Github (scripts): \url{https://github.com/SolaireLordOfSunlight/Linear-Regression}
+}
 \date{Abril, 2023}
 
 \begin{document}
@@ -16,7 +20,11 @@
     Los datos corresponden a los playoff (post-temporada) de la temporada 2021-22 de la NBA obtenidos de su sitio web oficial.
 
     Un punto a enfatizar es que las 79 unidades de  observacion son jugadores de la misma posicion, donde se toma en cuenta su promedio de puntos por partidos (PPG) y su promedio de minutos por partido (MPG).
-    
+
+    \begin{figure}[h]
+       \centering
+       \includegraphics[width=0.5\textwidth]{../plot1.png}
+    \end{figure}
     \section{Modelo Poblacional}
     
     \begin{equation}
@@ -24,6 +32,24 @@
     \end{equation}
     
     \section{Estimacion de Parametros}
+    \subsection*{Comandos \textit{R}}
+    \begin{verbatim}
+table_values <- read.csv("./nba_stats.csv")
+(summary(lm(formula = PPG ~ MPG, data = table_values)))
+    \end{verbatim}
+    \newpage
+    \subsection*{Resultados}
+    \begin{table}[h]
+        \centering
+        \begin{tabular}{l l c c}
+            & & $\hat{\beta_0}$ & $\hat{\beta_1}$ \\
+            PPG & = & -1.92 & 0.53 \\
+            $s.e$ &  & 0.73 & 0.03 \\
+            $t$ & & -2.65 & 17.9 \\
+            valor-$p$ & & 0.01 & $\approx$ 0
+        \end{tabular}
+    \end{table}
+    
     \section{Modelo Estimado}
     
     \begin{equation}
@@ -31,6 +57,10 @@
     \end{equation}
     
     \section{Analisis de Residuos}
+    \begin{figure}[ht]
+        \centering
+       \includegraphics[width=0.5\textwidth]{../plot2.png}
+    \end{figure}
     Una hipotesis que deben cumplir nuestro modelo es que $\varepsilon_i = (Y_i - \bar{Y}) \sim N(0, \sigma^2)$
 
     Aplicando distintos test de normalidad, tanto parametricos como no parametricos
@@ -49,7 +79,7 @@
 
     Con un nivel de significancia de 0.05, podriamos considerar la distribucion como una normal.
 
-    Ahora, al considerar un intervalo de confianza sobre la media con la hipotesis nula $H_0: \mu = 0$ obtenemos un valor $p = 1$, con lo que aceptamos $H_0$.
+    Ahora, al hacer un test de hipotesis con el comando \textit{t.test} sobre la media con la hipotesis nula $H_0: \mu = 0$ obtenemos un valor $p = 1$, con lo que aceptamos $H_0$.
 
     Con ello se cumplen los dos supuestos de la distribucion de los residuos.
 
