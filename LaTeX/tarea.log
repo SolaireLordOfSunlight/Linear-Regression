@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.12)  12 APR 2023 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Arch Linux) (preloaded format=pdflatex 2023.4.12)  12 APR 2023 23:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**tarea.tex
-(./tarea.tex
+**/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex
+(/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
@@ -291,8 +291,7 @@ with kernel methods
 )
 \Fld@listcount=\count290
 \c@bookmark@seq@number=\count291
-
-(/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
  (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
@@ -411,7 +410,7 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <../plot2.png, id=46, 481.8pt x 481.8pt>
 File: ../plot2.png Graphic file (type png)
 <use ../plot2.png>
-Package pdftex.def Info: ../plot2.png  used on input line 82.
+Package pdftex.def Info: ../plot2.png  used on input line 85.
 (pdftex.def)             Requested size: 258.0pt x 258.00673pt.
  [2 <../plot2.png (PNG copy)>] [3] (./tarea.aux
 LaTeX Info: Redefining \. on input line 22.
@@ -421,15 +420,15 @@ Package rerunfilecheck Info: File `tarea.out' has not changed.
 (rerunfilecheck)             Checksum: 864D7FC460EB72BF5CAFEEE5BAA7B115;1030.
  ) 
 Here is how much of TeX's memory you used:
- 11506 strings out of 476025
- 184047 string characters out of 5796532
- 1859388 words of memory out of 5000000
+ 11507 strings out of 476025
+ 184183 string characters out of 5796532
+ 1860388 words of memory out of 5000000
  31808 multiletter control sequences out of 15000+600000
  545847 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,76p,273b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,11n,76p,360b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on tarea.pdf (3 pages, 166642 bytes).
+Output written on tarea.pdf (3 pages, 170455 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  86 compressed objects within 1 object stream

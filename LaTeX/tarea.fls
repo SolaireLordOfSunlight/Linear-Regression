@@ -1,7 +1,7 @@
 PWD /home/solaire/Documents/analisis/tarea1/LaTeX
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT tarea.tex
+INPUT /home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex
 OUTPUT tarea.log
 INPUT /usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
 INPUT /usr/share/texmf-dist/tex/latex/ieeetran/IEEEtran.cls

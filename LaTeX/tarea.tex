@@ -50,15 +50,18 @@ table_values <- read.csv("./nba_stats.csv")
     \subsection*{Resultados}
     \begin{table}[h]
         \centering
-        \begin{tabular}{l l c c}
-            & & $\hat{\beta_0}$ & $\hat{\beta_1}$ \\
-            PPG & = & -1.92 & 0.53 \\
-            $s.e$ &  & 0.73 & 0.03 \\
-            $t$ & & -2.65 & 17.9 \\
-            valor-$p$ & & 0.01 & $\approx$ 0
+        \begin{tabular}{l l c c r}
+            & & $\hat{\beta_0}$ & $\hat{\beta_1}$ & \quad $R^2 = 0.8037$ \\
+            PPG & = & -1.92 & 0.53 &\\
+            $s.e$ &  & 0.73 & 0.03 &\\
+            $t$ & & -2.65 & 17.9 &\\
+            valor-$p$ & & 0.01 & $\approx$ 0 &
         \end{tabular}
     \end{table}
     
+    Aqui el $\hat{\beta_1}$ indica que los jugadores en promedio anotan 0.53 por cada minuto jugado. Por otro lado $\hat{\beta_0} = -1.92$ es un numero que no tiene sentido en la realidad, seria buena idea quitar el intercepto.
+
+    Interpretando $R^2$, el 80\% de la variaci\'on de la estad\'istica $PPG$ se explica por la de $MPG$.
     %\section{Modelo Estimado}
     %
     %\begin{equation}
@@ -119,5 +122,6 @@ table_values <- read.csv("./nba_stats.csv")
     Referencia: \url{https://fhernanb.github.io/libro_regresion/indep.html}
 
     \section{Conclusi\'on}
-    Es clara la relaci\'on entre los minutos jugados y los puntos anotados, pero seria una buena desici\'on incluir mas variables a este modelo en vez de solo dejarlo en dos. Algo a recalcar es que se cumplieron las hipotesis de Gauss-Markov.
+    Es clara la relaci\'on entre los minutos jugados y los puntos anotados, pero seria una buena desici\'on incluir mas variables a este modelo en vez de solo dejarlo en dos, y como se dijo anteriormente podriamos quitar el intercepto de nuestra funci\'on de regresi\'on poblacional.
+
 \end{document}
