@@ -4,8 +4,16 @@
 \usepackage[spanish]{babel}
 \usepackage[colorlinks=true, urlcolor=blue]{hyperref}
 \usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{titling}
 
-\title{Analisis de regresion sobre la relacion de las estadisticas de MPG y PPG en partidos de postemporada de la NBA}
+\titleformat{\section}
+{\Large}
+{}
+{0cm}
+{}[\titlerule]
+
+\title{An\'alisis de regresi\'on sobre la relaci\'on de las estad\'isticas de MPG y PPG en partidos de postemporada de la NBA}
 \author{Rudy Miranda Bastias\\
     Github (scripts): \url{https://github.com/SolaireLordOfSunlight/Linear-Regression}
 }
@@ -15,23 +23,24 @@
     \maketitle
 
     \section{Introducci\'on}
-    Se busca confirmar si la relacion entre la cantidad de puntos anotados por un jugador de la NBA, frente a la cantidad de minutos jugados por partido tienen una relacion del tipo lineal.
+    Se busca confirmar si la relaci\'on entre la cantidad de puntos anotados por un jugador de la NBA, frente a la cantidad de minutos jugados por partido tienen una relaci\'on del tipo lineal.
 
     Los datos corresponden a los playoff (post-temporada) de la temporada 2021-22 de la NBA obtenidos de su sitio web oficial.
 
-    Un punto a enfatizar es que las 79 unidades de  observacion son jugadores de la misma posicion, donde se toma en cuenta su promedio de puntos por partidos (PPG) y su promedio de minutos por partido (MPG).
+    Un punto a enfatizar es que las 79 unidades de  observaci\'on son jugadores de la misma posici\'on, donde se toma en cuenta su promedio de puntos por partidos (PPG) y su promedio de minutos por partido (MPG).
 
     \begin{figure}[h]
        \centering
        \includegraphics[width=0.5\textwidth]{../plot1.png}
     \end{figure}
+
     \section{Modelo Poblacional}
     
     \begin{equation}
         PPG = \beta_0 + \beta_1 MPG + \varepsilon        
     \end{equation}
     
-    \section{Estimacion de Parametros}
+    \section{Estimaci\'on de Parametros}
     \subsection*{Comandos \textit{R}}
     \begin{verbatim}
 table_values <- read.csv("./nba_stats.csv")
@@ -50,18 +59,29 @@ table_values <- read.csv("./nba_stats.csv")
         \end{tabular}
     \end{table}
     
-    \section{Modelo Estimado}
+    %\section{Modelo Estimado}
+    %
+    %\begin{equation}
+    %    PPG = \hat{\beta_0} + \hat{\beta_1} MPG + \varepsilon        
+    %\end{equation}
+    \section{Validaci\'on del Modelo}
+    Proponemos las hip\'otesis
     
-    \begin{equation}
-        PPG = \hat{\beta_0} + \hat{\beta_1} MPG + \varepsilon        
-    \end{equation}
-    
-    \section{Analisis de Residuos}
+    $$
+        H_0 : \beta_1 = 0
+    $$
+    $$
+        H_1 : \beta_1 \neq 0
+    $$
+
+    rechazando $H_0$ dado el valor-$p \approx 0$ del resumen anterior.
+
+    \section{An\'alisis de Residuos}
     \begin{figure}[ht]
         \centering
        \includegraphics[width=0.5\textwidth]{../plot2.png}
     \end{figure}
-    Una hipotesis que deben cumplir nuestro modelo es que $\varepsilon_i = (Y_i - \bar{Y}) \sim N(0, \sigma^2)$
+    Una hip\'otesis que deben cumplir nuestro modelo es que $\varepsilon_i = (Y_i - \bar{Y}) \sim N(0, \sigma^2)$
 
     Aplicando distintos test de normalidad, tanto parametricos como no parametricos
     
@@ -77,12 +97,27 @@ table_values <- read.csv("./nba_stats.csv")
         \end{center}
     \end{table}
 
-    Con un nivel de significancia de 0.05, podriamos considerar la distribucion como una normal.
+    Con un nivel de significancia de 0.05, podriamos considerar la distribuci\'on como una normal.
 
-    Ahora, al hacer un test de hipotesis con el comando \textit{t.test} sobre la media con la hipotesis nula $H_0: \mu = 0$ obtenemos un valor $p = 1$, con lo que aceptamos $H_0$.
+    Ahora, al hacer un test de hip\'otesis con el comando \textit{t.test} sobre la media con la hip\'otesis nula $H_0: \mu = 0$ obtenemos un valor $p = 1$, con lo que aceptamos $H_0$.
 
-    Con ello se cumplen los dos supuestos de la distribucion de los residuos.
+    Con ello se cumplen los dos supuestos de la distribuci\'on de los residuos.
 
-    \section{Conclusion}
-    Es clara la relacion entre los minutos jugados y los puntos anotados, pero seria una buena desicion incluir mas variables a este modelo en vez de solo dejarlo en dos.
+    \subsection{Independencia de los Residuos}
+
+    Aplicando el test de Durbin-Watson, con las siguientes hip\'otesis
+    
+    $$
+        H_0\text{ : los errores son independientes}
+    $$
+    $$
+        H_1\text{ : los errores no son independientes}
+    $$
+
+    Aceptamos la hip\'otesis nula, puesto que el valor-$p = 0.21 > 0.05$ el nivel de significancia con el cual trabajamos en este informe. 
+
+    Referencia: \url{https://fhernanb.github.io/libro_regresion/indep.html}
+
+    \section{Conclusi\'on}
+    Es clara la relaci\'on entre los minutos jugados y los puntos anotados, pero seria una buena desici\'on incluir mas variables a este modelo en vez de solo dejarlo en dos. Algo a recalcar es que se cumplieron las hipotesis de Gauss-Markov.
 \end{document}

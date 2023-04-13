@@ -10,19 +10,23 @@ eps <- table_values$PPG - fx(table_values$MPG)
 
 summary(eps)
 
+### Validacion de Modelo ###
+## Normalidad de los Residuos
 library(tseries)
 library(nortest)
 jarque.bera.test(eps)
 shapiro.test(eps)
 ad.test(eps)
 ks.test(eps, "pnorm")
-
-t.test(eps, mu = 0)
-
 qqnorm(eps)
+## Significancia del Modelo
+t.test(eps, mu = 0)
+## Prueba de Independencia
+acf(eps)
+library(lmtest)
+dwtest(table_values$PPG ~ table_values$MPG)
 
-### Graph
-
+### Graph ###
 library(ggplot2)
 
 ggplot(table_values, aes(MPG, PPG)) +
