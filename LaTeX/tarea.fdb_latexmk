@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1681358329 "/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex" "tarea.pdf" "tarea" 1681358329 0
+["pdflatex"] 1681358441 "/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex" "tarea.pdf" "tarea" 1681358441 0
   "../plot1.png" 1681012348 21807 37f07ae47cc6207ab3abbd6731075ce1 ""
   "../plot2.png" 1681012733 18762 71a716373b63878a56455ec90e9bc161 ""
-  "/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex" 1681358329 4643 fb479206997743d3ea5ca2512da4fd99 ""
+  "/home/solaire/Documents/analisis/tarea1/LaTeX/tarea.tex" 1681358441 4713 b4a537600eb44ecbe4f3bab248992d78 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc" 1680514707 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1680514707 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1680514707 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -100,9 +100,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1680514707 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1681356570 334353 c825108cbc13fa4a18a274c473196142 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1681356502 8204102 10606fb304e5998e0ddf80184040f670 ""
-  "tarea.aux" 1681358329 1563 f1e6066d2d6b36fef8aa7fd9aa4ad5d7 "pdflatex"
-  "tarea.out" 1681358329 1030 864d7fc460eb72bf5cafeee5baa7b115 "pdflatex"
-  "tarea.tex" 1681358329 4643 fb479206997743d3ea5ca2512da4fd99 ""
+  "tarea.aux" 1681358441 1563 f1e6066d2d6b36fef8aa7fd9aa4ad5d7 "pdflatex"
+  "tarea.out" 1681358441 1030 864d7fc460eb72bf5cafeee5baa7b115 "pdflatex"
+  "tarea.tex" 1681358441 4713 b4a537600eb44ecbe4f3bab248992d78 ""
   (generated)
   "tarea.aux"
   "tarea.log"
